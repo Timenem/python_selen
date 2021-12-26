@@ -1,0 +1,44 @@
+1640546521788	geckodriver	INFO	Listening on 127.0.0.1:47491
+1640546527299	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofilexTHFtz"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+1640546527629	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexTHFtz/search.json.mozlz4", (void 0)))
+1640546528790	Marionette	INFO	Listening on port 33985
+1640546528854	Marionette	WARN	TLS certificate errors will be ignored for this session
+1640546533227	Marionette	INFO	Stopped listening on port 33985
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 446: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIUrlClassifierDBService.getTables]
+1640546552122	geckodriver	INFO	Listening on 127.0.0.1:37317
+1640546557756	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileVWYk3i"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+1640546558075	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVWYk3i/search.json.mozlz4", (void 0)))
+1640546559138	Marionette	INFO	Listening on port 43021
+1640546559182	Marionette	WARN	TLS certificate errors will be ignored for this session
+1640546563657	Marionette	INFO	Stopped listening on port 43021
+1640546573403	geckodriver	INFO	Listening on 127.0.0.1:40249
+1640546578975	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofilezI0SxJ"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+1640546579309	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilezI0SxJ/search.json.mozlz4", (void 0)))
+1640546580598	Marionette	INFO	Listening on port 45431
+1640546580628	Marionette	WARN	TLS certificate errors will be ignored for this session
+1640546585724	Marionette	INFO	Stopped listening on port 45431
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1640546600710	geckodriver	INFO	Listening on 127.0.0.1:53803
+1640546606382	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileVr3cNy"
+console.error: Enterprise Policies: 
+  Error parsing JSON file
+1640546606715	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileVr3cNy/search.json.mozlz4", (void 0)))
+1640546608946	Marionette	INFO	Listening on port 35543
+1640546609027	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 154: TypeError: date is undefined
+1640546628204	Marionette	INFO	Stopped listening on port 35543
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
