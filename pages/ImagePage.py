@@ -1,8 +1,6 @@
 import time
-
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-
 from .BasicPage import BasicPage
 
 
@@ -13,7 +11,6 @@ class ImagePageLocators:
     FIRST_IMAGE_FROM_ALL_IMAGES = (By.CLASS_NAME, 'serp-item__link')
     SEARCH_WINDOW_QUERY = (By.CSS_SELECTOR, ".input__control")
     IMAGE_CONTAINER = (By.CLASS_NAME, 'MMImageContainer')
-
     IMAGE_CONTAINER_NAME = (By.CSS_SELECTOR, ".MMImage-Preview")
     NEXT_BTN = (By.XPATH,
                 "//div[@class='CircleButton CircleButton_type_next CircleButton_type MediaViewer-Button MediaViewer-Button_hovered MediaViewer_theme_fiji-Button MediaViewer-ButtonNext MediaViewer_theme_fiji-ButtonNext']")
@@ -23,51 +20,78 @@ class ImagePageLocators:
 
 
 class ImagePage(BasicPage):
+
     def find_image_by_link(self):
+        """ 
+        открывает категорию картинки , переключает на фокус на данное окно 
+        :return окно с открытой категорией картинки
+        """
         self.find_element(ImagePageLocators.IMAGES_LINK).click()
         window = self.driver.switch_to.window(self.driver.window_handles[1])
         return window
 
     def get_first_category_name(self):
         """
-        ищет первую категорию из представленных на странице,возвращает название категории
+        возвращает название категории
+        :return первую категорию из представленных на странице,возвращает название категории
         """
         return self.find_element(ImagePageLocators.FIRST_CATEGORY_IMAGES).get_attribute('textContent')
 
     def get_url(self):
-
+        """ возвращает текущий url 
+        :return: текущий url
+        """
         return self.driver.current_url
 
     def open_first_category_image(self):
-        """ открывает первую категорию """
+        """ открывает первую категорию
+        :return: результат открытия первой категории
+        """
         return self.find_element(ImagePageLocators.FIRST_CATEGORY_IMAGES).click()
 
     def page_refresh(self):
-        """ перезагружает страницу для получения value  в методе get_image_name_from_search_window"""
+        """
+        перезагружает страницу для получения value  в методе get_image_name_from_search_window
+        """
         self.driver.refresh()
 
     def get_image_name_from_search_window(self):
-        """ находит поле ввода запроса и возвращет  запрос  """
+        """
+        находит поле ввода запроса и возвращает запрос
+        :return: возвращает поисковый запрос
+        """
         return self.find_element(ImagePageLocators.SEARCH_WINDOW_QUERY).get_attribute('value')
 
     def open_first_image(self):
-        """ открывет первое изображение из представленных на странице """
+        """
+        открывает первое изображение из представленных на странице
+        :return: возвращает коллекцию, кликает на первый элемент из коллекции
+        """
         all_images = self.find_elements(ImagePageLocators.FIRST_IMAGE_FROM_ALL_IMAGES)
         return all_images[0].click()
 
     def image_options(self):
-        """ поиск контейнера изображения """
+        """
+        поиск контейнера изображения для взаимодействия с кнопками вперед, назад
+        :return: опции изображения
+        """
         return self.find_element(ImagePageLocators.IMAGE_CONTAINER)
 
     def get_image_uri(self):
-        """ извлекает путь картинки из контейнера для сравнения """
+        """
+        извлекает путь картинки из контейнера для сравнения
+        :return: uri картинки
+        """
         return self.find_element(ImagePageLocators.IMAGE_CONTAINER_NAME).get_attribute("src")
 
     def press_to_image_btn(self):
-        """ выполняет нажатие на кнопки next """
+        """
+        выполняет нажатие на кнопки next
+        """
         action = ActionChains(self.driver)
         action.move_to_element(self.wait_click(ImagePageLocators.IMAGE_CONTAINER)).perform()
         time.sleep(2)
         self.find_element(ImagePageLocators.NEXT_BTN).click()
         time.sleep(2)
         action.move_to_element(self.wait_click(ImagePageLocators.IMAGE_CONTAINER)).perform()
+
