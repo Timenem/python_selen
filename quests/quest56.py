@@ -1,4 +1,4 @@
-
+from datetime import datetime
 def time_converter(time):
         
     if time[:2] == "00":
@@ -13,6 +13,10 @@ def time_converter(time):
 
     return time
 
+
+def time_converter_second(time):
+    d = datetime.strptime(time, "%H:%M")    
+    print(d.strftime("%I:%M %P"))
 
 if __name__ == '__main__':
     print(time_converter('12:30'))
