@@ -8,5 +8,9 @@
 """
 
 
-print(*list(map(float, input().split()))[:3])
+# print(*list(map(float, input().split()))[:3])
 
+x =input().split(" ")
+int_nums = list(map(int,x))
+absval = list(map(abs,int_nums))
+print(*absval)
