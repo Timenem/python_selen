@@ -1,4 +1,4 @@
-from SortingAlg import BubbleSort
+from sortingAlghoritm import BubbleSort
 import unittest
 
 rnd = [5, -2, 4, -1, 0]
