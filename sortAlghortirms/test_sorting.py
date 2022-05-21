@@ -15,6 +15,16 @@ class TestSort(unittest.TestCase):
 
     def testReversedSort(self):
         self.assertEqual(self.sortAlg.reveresdSort(rnd), reversAnswer)
+        
+
+class TestInsertionSort(unittest.TestCase):
+    def setUp(self):
+        self.sortAlg = InsertionSort()
+
+    def testForvardSort(self):
+        self.assertEqual(self.sortAlg.insertSort(rnd), answer)
+
+        
 
 
 if __name__ == '__main__':
