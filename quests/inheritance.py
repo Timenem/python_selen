@@ -40,3 +40,11 @@ class Director(Person):
     def show(self):
         print(f"{self.name} {self.age} {self.val} {self.function}")
 
+
+class DeputyDirector(Person):
+    def __init__(self,name,age,grade,function="alternate director"):
+        super().__init__(name, age,function)
+        self.grade =grade
+
+    def show(self):
+        print(f"{self.name} {self.age} {self.grade} {self.function}")
