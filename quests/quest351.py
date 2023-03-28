@@ -30,3 +30,38 @@ class keyword_cipher(object):
         return str.translate(self.e_tab)
     def decode(self, str):
         return str.translate(self.d_tab)
+    
+    
+    from string import ascii_lowercase
+class keyword_cipher(object):
+    def __init__(self, abc, keyword):
+        self.abc = abc
+        self.keyword = keyword
+
+    def remove_duplicate(self) -> str:
+        finish_str = []
+        for i in self.keyword:
+            if i not in finish_str:
+                finish_str.append(i)
+        for ch in ascii_lowercase:
+            if ch not in finish_str:
+                finish_str.append(ch)
+        return "".join(finish_str)
+
+
+    def encode(self,plain: str) -> str:
+        rem_dupl = self.remove_duplicate()
+        d = dict(zip(ascii_lowercase, rem_dupl))
+        ans = ''
+        for ch in plain:
+            ans += d[ch]
+        return ans
+
+    def decode(self,ciphered:str):
+        rem_dupl = self.remove_duplicate()
+        d = dict(zip(rem_dupl,ascii_lowercase))
+        ans = ''
+        for ch in ciphered:
+            ans += d[ch]
+        return ans
+
